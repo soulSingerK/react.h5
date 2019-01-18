@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
+const config = path.resolve(process.cwd(), 'config')
+
 function resolve(dir) {
   return path.resolve(__dirname, '..', dir)
 }
@@ -16,7 +18,11 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': resolve('src')
+      '@': resolve('src'),
+      "api": resolve('src/api'),
+      "container": resolve('src/container'),
+      "common": resolve('src/common'),
+      "components": resolve('src/components')
     }
   },
   module: {
@@ -32,6 +38,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DllReferencePlugin({
+      context: process.cwd(),
+      manifest: require(path.join(config, 'js', 'dll', 'vendor-mainfest.json'))
+    }),
     new htmlWebpackPlugin({
       template: 'index.html'
     })
