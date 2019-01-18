@@ -3,7 +3,7 @@ const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
 function resolve(dir) {
-  return path.resolve(__dirname, dir)
+  return path.resolve(__dirname, '..', dir)
 }
 
 // const isDev = 
@@ -13,6 +13,11 @@ module.exports = {
   output: {
     filename: '[name].[hash:8].js',
     path: path.join(__dirname, './dist')
+  },
+  resolve: {
+    alias: {
+      '@': resolve('src')
+    }
   },
   module: {
     rules: [
