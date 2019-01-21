@@ -23,7 +23,7 @@ class Index extends React.Component {
         { this.state.modules.map((module, index) => {
           const Component = require(`components/${module.component_name}/index`).default
           return (
-           <Component key={index}/>
+           <Component key={index} data={module}/>
           )
         }) }
       </div>
