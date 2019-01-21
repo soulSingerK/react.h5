@@ -12,7 +12,7 @@ const swiperConfig = {
 
 class Swiper extends React.Component {
   static propTypes = {
-    data: PropTypes.array.isRequired
+    data: PropTypes.object.isRequired
   }
 
   componentDidMount() {
@@ -20,11 +20,11 @@ class Swiper extends React.Component {
   }
 
   render() {
-    const data = this.props.data
+    const content = this.props.data.business_obj.content
     return (
       <div className='swiper-container'>
-        <div className='swiper-wrapper' style={{width: (data.length + 2) * 375}}>
-          { data.map((item, index) => (
+        <div className='swiper-wrapper' style={{width: (content.length + 2) * 375}}>
+          { content.map((item, index) => (
             <div className='swiper-slide' key={index}>
               <a href="javascript: void 0">
                 <img src={item.img_url} className='swiper-img'/>

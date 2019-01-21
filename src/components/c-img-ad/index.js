@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Swiper from './swiper/index'
-
 class CImgAd extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired
@@ -15,10 +13,18 @@ class CImgAd extends React.Component {
   render() {
     const data = this.props.data
     const styleType = data.config_map.style_type
-    const content = data.business_obj.content
+    const Component = require(`./${this.useComponent(styleType)}/index`).default
     return (
-      styleType === 0 ? <Swiper data={content}/>
-      : null
+      Component && <Component data={data}/>
+    )
+  }
+
+  useComponent(styleType) {
+    return (
+      styleType === 0 ? 'swiper'
+      : styleType === 1 ? 'type-1_1'
+      : styleType === 2 ? 'type-1_2'
+      : ''
     )
   }
 }

@@ -19,7 +19,7 @@ class Index extends React.Component {
   render() {
     console.log(this.state.modules)
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         { this.state.modules.map((module, index) => {
           const Component = require(`components/${module.component_name}/index`).default
           return (
