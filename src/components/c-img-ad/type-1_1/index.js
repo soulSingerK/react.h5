@@ -15,12 +15,13 @@ class Type11 extends React.Component {
     const data = this.props.data
     const business_obj = data.business_obj
     const config_map = data.config_map
+    const styles = {marginTop: config_map.interval, marginBottom: config_map.interval}
     return (
       <ul>
         {
           business_obj.content.map((item, index) => (
             <li className='ad-item'
-              style={{marginTop: config_map.interval, marginBottom: config_map.interval}}
+              style={styles}
               key={index}
             >
               <a href="javascript:void 0" className='img-wrap'>

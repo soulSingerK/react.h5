@@ -16,10 +16,9 @@ const instance = axios.create(conf)
 
 instance.interceptors.request.use(async config => {
   config.url = `/router/rest?method=aqsea.${config.url}&version=v1`
-  console.log(process.env.NODE_ENV)
   if (process.env.NODE_ENV === 'dev-production') {
     config.url = `p${config.url}`
-  } else if (process.env.NODE_ENV === 'production') {
+  } else if (process.env.NODE_ENV === 'development') {
     config.url = `http://api.aqsea.com${config.url}`
   } else if (process.env.NODE_ENV === 'dev-staging') {
     config.url = `s${config.url}`

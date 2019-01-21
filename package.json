@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --inline --colors --config ./build/webpack.dev.js",
+    "start": "cross-env DEPLOY_ENV=development&& webpack-dev-server --inline --colors --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.pro.js"
   },
   "keywords": ["react", "refactor"],
