@@ -4,8 +4,11 @@
   }
   &-slide {
     float: left;
-    height: 230px;
-    width: 100%
+    width: 375px;
+    a {
+      display: block;
+      width: 375px;
+    }
   }
   &-img {
     width: 100%;
