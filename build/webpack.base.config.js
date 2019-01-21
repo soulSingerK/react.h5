@@ -32,6 +32,28 @@ module.exports = {
       {
         test: /\.scss/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            name: '[name].[hash:7].[ext]',
+            limit: 8192,
+            outputPath: 'font'
+          }
+        }]
+      },
+      {
+        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+            name: '[name].[hash:7].[ext]',
+            outputPath: 'img'
+          }
+        }]
       }
     ]
   },
