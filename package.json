@@ -1,14 +1,14 @@
 {
   "name": "react.h5",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a react app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development webpack-dev-server --inline --colors --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.pro.js"
   },
-  "keywords": [],
+  "keywords": ["react", "refactor"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -36,6 +36,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "swiper": "^4.4.6"
   }
 }
