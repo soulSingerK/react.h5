@@ -1,0 +1,6 @@
+@mixin wd($width, $height, $color, $fontSize) {
+  width: $width;
+  height: $height;
+  color: $color;
+  font-size: $fontSize;
+}
