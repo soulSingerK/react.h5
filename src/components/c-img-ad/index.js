@@ -13,7 +13,8 @@ class CImgAd extends React.Component {
   render() {
     const data = this.props.data
     const styleType = data.config_map.style_type
-    const Component = require(`./${this.useComponent(styleType)}/index`).default
+    const type = this.useComponent(styleType)
+    const Component = type && require(`./${type}/index`).default
     return (
       Component && <Component data={data}/>
     )
